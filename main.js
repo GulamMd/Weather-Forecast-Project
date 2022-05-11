@@ -42,7 +42,7 @@ function updateWeatherItems() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            let { humidity, pressure, temp } = data.list[0].main;
+            let { humidity, temp } = data.list[0].main;
             let speed = data.list[0].wind.speed;
             let description = data.list[0].weather[0].description;
             currentWeatherItemsEl.innerHTML =
@@ -50,7 +50,7 @@ function updateWeatherItems() {
             <div>Humidity : ${humidity}%</div>
         </div>
         <div class="weather-item">
-            <div>Pressure : ${pressure}</div>
+            <div>Temperature : ${temp}</div>
             <div></div>
         </div>
         <div class="weather-item">
